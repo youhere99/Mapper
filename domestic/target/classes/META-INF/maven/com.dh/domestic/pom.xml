@@ -29,11 +29,11 @@
 
 	<dependencies>
 		<!-- 公共得实体、接口，公用的工具类 -->
-		<dependency>
-			<groupId>com.dh</groupId>
-			<artifactId>sysmanage-comm</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.dh</groupId> -->
+<!-- 			<artifactId>sysmanage-comm</artifactId> -->
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+<!-- 		</dependency> -->
 		<!-- dubbo cunsumer start -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -57,7 +57,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
+		<!-- zookeeper 工具类-->
 		<dependency>
 			<groupId>com.101tec</groupId>
 			<artifactId>zkclient</artifactId>
