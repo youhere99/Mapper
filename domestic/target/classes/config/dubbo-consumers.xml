@@ -14,5 +14,5 @@
 	<dubbo:registry protocol="zookeeper" address="192.168.200.191:2181" client="zkclient" />
 	
 	
-	<dubbo:reference id="userOutService" interface="com.dh.system.service.UserOutService" />
+<!-- 	<dubbo:reference id="userOutService" interface="com.dh.system.service.UserOutService" /> -->
 </beans>

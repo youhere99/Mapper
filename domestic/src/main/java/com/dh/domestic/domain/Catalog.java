@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
  * <p>
  * Copyright: Copyright (c) 2018年5月9日 下午4:39:15
  * <p>
- * Company: 中科威荣
+ * Company: 
  * <p>
  * 
  * @author zhaomingxing

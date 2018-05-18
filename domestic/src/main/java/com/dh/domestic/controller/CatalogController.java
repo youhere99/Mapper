@@ -22,7 +22,7 @@ import com.github.pagehelper.PageInfo;
  * <p>
  * Copyright: Copyright (c) 2018年5月9日 下午4:52:35
  * <p>
- * Company: 中科威荣
+ * Company:
  * <p>
  * 
  * @author zhaomingxing

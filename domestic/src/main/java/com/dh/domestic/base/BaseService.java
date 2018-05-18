@@ -12,7 +12,7 @@ import tk.mybatis.mapper.entity.Example;
  * <p>
  * Copyright: Copyright (c) 2018年5月11日 下午1:37:55
  * <p>
- * Company: 中科威荣
+ * Company: 
  * <p>
  * 
  * @author zhaomingxing

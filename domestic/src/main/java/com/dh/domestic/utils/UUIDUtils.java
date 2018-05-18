@@ -9,7 +9,7 @@ import java.util.UUID;
  * <p>
  * Copyright: Copyright (c) 2018年5月9日 下午6:18:16
  * <p>
- * Company: 中科威荣
+ * Company: 
  * <p>
  * 
  * @author zhaomingxing
