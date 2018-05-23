@@ -1,71 +1,62 @@
 package com.dh.domestic.config;
+
 /**
  * 
- * @author 崔
- * @date: 2018年5月7日 下午4:00:00
- * @Description: 返回结果集
+ * Title.
+ * <p>
+ * Description.
+ * <p>
+ * Copyright: Copyright (c) 2018年5月22日 下午4:02:25
+ * <p>
+ * Company:
+ * <p>
+ * 
+ * @author zhaomingxing
+ * @version 1.8
  */
-public class Result {
+public class Result<T> {
+  private int code;
+  private String message;
+  private T data;
 
-	/**
-	 * 结果体
-	 */
-	protected Object data;
+  private Result(int code, String message, T data) {
+    this.code = code;
+    this.message = message;
+    this.data = data;
+  }
 
-	/**
-	 * 状态码
-	 */
-	protected Integer code;
+  public int getCode() {
+    return code;
+  }
 
-	/**
-	 * 信息
-	 */
-	protected String message;
+  public String getMessage() {
+    return message;
+  }
 
-	private Result() {
-		super();
-	}
+  public T getData() {
+    return data;
+  }
 
-	private Result(Integer code) {
-		this.code = code;
-	}
+  // 返回正确结果，没有message信息和data对象，调用此方法(一般用不到)
+  public static <T> Result<T> success() {
+    return new Result<T>(ResultCode.SUCCESS, null, null);
+  }
 
-	public static Result create(Integer code) {
-		return new Result(code);
-	}
+  // 返回正确结果，没有message信息，有data对象，调用此方法
+  public static <T> Result<T> success(T data) {
+    return success(data, "success");
+  }
 
-	public static Result createSuccessResult() {
-		return create(ResultCode.SUCCESS);
-	}
+  // 返回正确结果，有message信息和data对象，调用此方法
+  public static <T> Result<T> success(T data, String message) {
+    return new Result<T>(ResultCode.SUCCESS, message, data);
+  }
 
-	public static Result createSuccessResult(Object data, String message) {
-		return createSuccessResult().setData(data).setMessage(message);
-	}
-
-	public Object getData() {
-		return data;
-	}
-
-	public Result setData(Object data) {
-		this.data = data;
-		return this;
-	}
-
-	public Integer getCode() {
-		return code;
-	}
-
-	public Result setCode(Integer code) {
-		this.code = code;
-		return this;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public Result setMessage(String message) {
-		this.message = message;
-		return this;
-	}
+  // 返回的是错误结果，有错误代码和信息，调用此方法
+  public static <T> Result<T> error(int code, String message) {
+    if (code == ResultCode.SUCCESS) {
+      code = -1;
+    }
+    return new Result<T>(code, message, null);
+  }
 }

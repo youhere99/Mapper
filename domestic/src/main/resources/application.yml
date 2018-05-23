@@ -10,10 +10,10 @@ mybatis:
 mapper:
   mappers: com.dh.domestic.base.BaseDao
   not-empty: false
-  identity: INFORMIX
+#  identity: H2
 # 分页插件配置
 pagehelper: 
-  helperDialect: INFORMIX
+  helperDialect: H2
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql

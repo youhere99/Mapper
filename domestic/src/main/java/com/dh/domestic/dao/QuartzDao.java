@@ -1,7 +1,7 @@
 package com.dh.domestic.dao;
 
 import com.dh.domestic.base.BaseDao;
-import com.dh.domestic.domain.Catalog;
+import com.dh.domestic.domain.Quartz;
 
 /**
  * 
@@ -11,12 +11,12 @@ import com.dh.domestic.domain.Catalog;
  * <p>
  * Copyright: Copyright (c) 2018年5月11日 下午1:33:00
  * <p>
- * Company: 
+ * Company:
  * <p>
  * 
  * @author zhaomingxing
  * @version 1.8
  */
-public interface CatalogDao extends BaseDao<Catalog> {
+public interface QuartzDao extends BaseDao<Quartz> {
 
 }

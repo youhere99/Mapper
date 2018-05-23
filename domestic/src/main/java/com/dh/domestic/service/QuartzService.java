@@ -1,7 +1,7 @@
 package com.dh.domestic.service;
 
 import com.dh.domestic.base.BaseService;
-import com.dh.domestic.domain.Catalog;
+import com.dh.domestic.domain.Quartz;
 
 /**
  * 
@@ -11,13 +11,13 @@ import com.dh.domestic.domain.Catalog;
  * <p>
  * Copyright: Copyright (c) 2018年5月11日 下午2:02:03
  * <p>
- * Company: 
+ * Company:
  * <p>
  * 
  * @author zhaomingxing
  * @version 1.8
  */
-public interface CatalogService extends BaseService<Catalog> {
+public interface QuartzService extends BaseService<Quartz> {
 
 
 

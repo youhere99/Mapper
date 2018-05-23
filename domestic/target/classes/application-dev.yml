@@ -3,13 +3,21 @@ server:
 debug: true
 logging: 
   level: 
-    root: warn
+    root: debug
     tk.mybatis.springboot.mapper: trace
 
-#8S
-spring: 
-  datasource: 
-    url: 'jdbc:informix-sqli://192.168.200.199:9088/domestic:informixserver=gbase;DB_LOCALE=zh_cn.utf8;CLIENT_LOCALE=zh_cn.utf8;NEWCODESET=UTF8,GB18030-2000,5488'
-    username: informix
-    password: informix
-    driverClassName: com.informix.jdbc.IfxDriver
+#H2
+spring:
+    datasource: 
+        url: jdbc:h2:mem:quartz
+        driver-class-name: org.h2.Driver
+        username: root
+        password: 123456
+        schema: classpath:db/schema.sql
+        data: classpath:db/data.sql
+    h2: 
+      console: 
+           path: /h2-console
+           enabled: true
+           settings: 
+              web-allow-others: true

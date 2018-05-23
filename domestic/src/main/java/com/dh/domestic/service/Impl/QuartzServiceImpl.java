@@ -3,9 +3,9 @@ package com.dh.domestic.service.Impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.dh.domestic.base.BaseServiceImpl;
-import com.dh.domestic.dao.CatalogDao;
-import com.dh.domestic.domain.Catalog;
-import com.dh.domestic.service.CatalogService;
+import com.dh.domestic.dao.QuartzDao;
+import com.dh.domestic.domain.Quartz;
+import com.dh.domestic.service.QuartzService;
 
 /**
  * 
@@ -15,16 +15,16 @@ import com.dh.domestic.service.CatalogService;
  * <p>
  * Copyright: Copyright (c) 2018年5月11日 下午2:04:41
  * <p>
- * Company: 
+ * Company:
  * <p>
  * 
  * @author zhaomingxing
  * @version 1.8
  */
 @Service
-public class CatalogServiceImpl extends BaseServiceImpl<Catalog> implements CatalogService {
+public class QuartzServiceImpl extends BaseServiceImpl<Quartz> implements QuartzService {
   @Autowired
-  private CatalogDao catalogDao;
+  private QuartzDao quartzDao;
 
 
 
