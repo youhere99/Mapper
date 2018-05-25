@@ -1,18 +1,12 @@
 package com.dh.domestic.config;
 
 import com.dh.domestic.service.Impl.QuartzServiceImpl;
-import java.util.Date;
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import com.dh.domestic.service.QuartzService;
+import lombok.extern.slf4j.Slf4j;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
-import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.dh.domestic.domain.Quartz;
-import com.dh.domestic.service.QuartzService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -36,18 +30,15 @@ public class QuartzJobFactory implements Job {
   @Autowired
   private QuartzService quartzService=new QuartzServiceImpl();
 
-  @Autowired
-  private HttpServletRequest  req;
 
   @Override
-  public void execute(JobExecutionContext context) throws JobExecutionException {
+  public void execute(JobExecutionContext context) {
     JobDataMap dataMap = context.getJobDetail().getJobDataMap();
-    Quartz quartz = (Quartz) dataMap.get("Quartz");
-    log.info("定时任务 {} 成功运行", quartz.getJobName());
-    quartz.setUpdateTime(new Date());
-    System.out.println("-----------______________"+req.getServerPort()+"_______________------------");
-     quartzService.updateByPrimaryKey(quartz);
-    log.info("更新定时任务 {}最后 成功运行 的时间", quartz.getJobName());
+//    Quartz quartz = (Quartz) dataMap.get("Quartz");
+//    log.info("定时任务 {} 成功运行", quartz.getJobName());
+//    quartz.setUpdateTime(new Date());
+//     quartzService.updateByPrimaryKey(quartz);
+    log.info("----------------更新定时任务 {}最后 成功运行----------------------");
     // 根据name 与 group组成的唯一标识来判别该执行何种操作……
   }
 }
