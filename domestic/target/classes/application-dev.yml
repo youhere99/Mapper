@@ -1,23 +1,38 @@
-server: 
-  port: 8081
+server:
+  port: 8083
 debug: true
-logging: 
-  level: 
+logging:
+  level:
     root: debug
     tk.mybatis.springboot.mapper: trace
 
 #H2
 spring:
-    datasource: 
-        url: jdbc:h2:mem:quartz
+    datasource:
+        url: jdbc:h2:tcp://127.0.0.1/H:/h2-2018-03-18/quartz
         driver-class-name: org.h2.Driver
         username: root
         password: 123456
-        schema: classpath:db/schema.sql
-        data: classpath:db/data.sql
-    h2: 
-      console: 
+#        schema: classpath:db/schema.sql
+#        data: classpath:db/data.sql
+    h2:
+      console:
            path: /h2-console
            enabled: true
-           settings: 
+           settings:
               web-allow-others: true
+# mybatis 配置
+mybatis:
+  type-aliases-package: com.dh.domestic.domain
+  mapper-locations: classpath:mapper/*.xml
+# 通用 Mapper 配置
+mapper:
+  mappers: com.dh.domestic.base.BaseDao
+  not-empty: false
+#  identity: H2
+# 分页插件配置
+pagehelper: 
+  helperDialect: H2
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

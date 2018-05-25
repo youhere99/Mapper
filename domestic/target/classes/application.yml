@@ -1,7 +1,26 @@
-# 设置激活的环境
+server:
+  port: 8081
+debug: true
+logging:
+  level:
+    root: debug
+    tk.mybatis.springboot.mapper: trace
+
+#H2
 spring:
-  profiles:
-     active: dev
+    datasource:
+        url: jdbc:h2:tcp://127.0.0.1/H:/h2-2018-03-18/quartz
+        driver-class-name: org.h2.Driver
+        username: root
+        password: 123456
+#        schema: classpath:db/schema.sql
+#        data: classpath:db/data.sql
+    h2:
+      console:
+           path: /h2-console
+           enabled: true
+           settings:
+              web-allow-others: true
 # mybatis 配置
 mybatis:
   type-aliases-package: com.dh.domestic.domain
